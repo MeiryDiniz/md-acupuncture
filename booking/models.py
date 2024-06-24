@@ -21,3 +21,26 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+class Schedule(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField(default=timezone.now)    
+    time = models.CharField(max_length=5, choices=[
+        ('09:00', '09:00'), ('10:00', '10:00'), 
+        ('11:00', '11:00'), ('12:00', '12:00'), 
+        ('13:00', '13:00'), ('14:00', '14:00'), 
+        ('15:00', '15:00'), ('16:00', '16:00'), 
+        ('17:00', '17:00'), ('18:00', '18:00'), 
+        ('19:00', '19:00'), ('20:00', '20:00'), 
+    ])
+    
+    def save(self, *args, **kwargs):
+        # Check if appointment already exists for the same date and time
+        appointments = Schedule.objects.filter(date=self.date, time=self.time)
+        if appointments.exists():
+            raise ValidationError("Appointment already exists for the same date and time.")
+        # Check if appointment falls on a weekend or bank holiday
+        if self.date.weekday() > 4 or self.is_bank_holiday(self.date):
+            raise ValidationError("Appointments are not available on weekends or bank holidays in Ireland.")
+        super().save(*args, **kwargs)        
