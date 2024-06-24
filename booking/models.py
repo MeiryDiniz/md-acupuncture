@@ -43,4 +43,17 @@ class Schedule(models.Model):
         # Check if appointment falls on a weekend or bank holiday
         if self.date.weekday() > 4 or self.is_bank_holiday(self.date):
             raise ValidationError("Appointments are not available on weekends or bank holidays in Ireland.")
-        super().save(*args, **kwargs)        
+        super().save(*args, **kwargs)    
+
+
+class Review(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"Review: {self.body} By: {self.author}"            
