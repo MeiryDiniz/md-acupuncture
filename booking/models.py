@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.utils import timezone
 import holidays
 
@@ -43,7 +44,15 @@ class Schedule(models.Model):
         # Check if appointment falls on a weekend or bank holiday
         if self.date.weekday() > 4 or self.is_bank_holiday(self.date):
             raise ValidationError("Appointments are not available on weekends or bank holidays in Ireland.")
-        super().save(*args, **kwargs)    
+        super().save(*args, **kwargs)   
+
+        # Function to check if a date is a bank holiday in Ireland
+    @staticmethod
+    def is_bank_holiday(date):
+        ireland_holidays = holidays.Ireland()
+        if date.weekday() >= 5 or date in ireland_holidays:
+             return True
+        return False    
 
 
 class Review(models.Model):
