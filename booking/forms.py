@@ -1,7 +1,8 @@
-from .models import Review
 from django import forms
+from .models import Schedule
 
-class ReviewForm(forms.ModelForm):
+
+class ScheduleForm(forms.ModelForm):
     class Meta:
-        model = Review
-        fields = ('body',)
+        model = Schedule
+        fields = ('date', 'time')

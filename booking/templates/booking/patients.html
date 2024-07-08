@@ -3,93 +3,58 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Welcome, {{ user.username }}</h1>
-
-<!-- Creating New Comments -->
-<div class="col-md-4 card mb-4 mt-3">
-    <div class="card-body">
-        {% if user.is_authenticated %}
-        <h3>Leave a Review:</h3>
-        <p>Posting as: {{ user.username }}</p>
-        <form id="reviewForm" method="post" action="" style="margin-top: 1.3em;">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-        </form>
-        {% else %}
-        <p>Log in to leave a review</p>
-        {% endif %}
-    </div>
-</div>
-
-<!-- Displaying count of comments -->
-<div class="row">
-    <div class="col-12">
-        <strong class="text-secondary">
-            <i class="far fa-comments" style="color: #74C0FC;"></i> {{ review_count }} Reviews
-        </strong>
-    </div>
-    <div class="col-12">
-        <hr>
-    </div>
-</div>
-
-<!-- Displaying Comments -->
-<div class="row">
-    <div class="col-12">
-        <h3>Reviews:</h3>
-        {% for review in reviews %}
-        <div class="card mb-4 {% if not review.approved and review.author == user %}faded{% elif not review.approved %} d-none{% endif %}">
+<!-- User welcome -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 card mb-4 mt-3">
+            <h1>Welcome {{ user.username }},</h1>
             <div class="card-body">
-                <p class="font-weight-bold">
-                    {{ review.author }}
-                    <span class="font-weight-normal">                        
-                    </span> wrote:
-                </p>
-                <div id="review{{ review.id }}">
-                    {{ review.body|linebreaks }}
-                    {{ review.created_on }}
-                </div>
-                <hr>
-                {% if review.approved %}
-                <p class="text-success">
-                    This review was approved!
-                </p>
-                {% elif not review.approved and review.author == user %}
-                <p class="text-danger">
-                    This review is awaiting approval
-                </p>
-                {% endif %}
-                {% if user.is_authenticated and review.author == user %}
-                <button class="btn btn-danger btn-delete" review_id="{{ review.id }}">Delete</button>
-                <button class="btn btn-primary btn-edit" review_id="{{ review.id }}">Edit</button>
+                {% if user.is_authenticated %}
+                <h5>It has never been so easy to book or manage your appointments!</h5>
+                <p>Would you like to have an appointment booked, or just manage it? You can do it by clicking the
+                    buttons below.</p>
+
                 {% endif %}
             </div>
         </div>
-        {% endfor %}
     </div>
+</div>
+<!-- Displaying Appointments -->
+<div class="container">
+    <h2>My Appointments</h2>
+    <a href="{% url 'book_appointment' %}" class="btn btn-success mb-3">Book Appointment</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.time }}</td>
+                <td>
+                    <a href="{% url 'edit_appointment' appointment.id %}" class="btn btn-warning">Edit</a>
+                    <!-- <a href="{% url 'delete_appointment' appointment.id %}" class="btn btn-danger">Delete</a> -->
+                    <form id="deleteForm{{ appointment.id }}" method="post"
+                        action="{% url 'delete_appointment' appointment.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="appointment_id" value="{{ appointment.id }}">
+                        <button type="button" class="btn btn-danger"
+                            onclick="confirmDelete({{ appointment.id }})">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
-<!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Delete Review?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete your review? This action cannot be undone.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
 
 {% block extras %}
-<script src="{% static 'js/reviews.js' %}"></script>
+<script src="{% static 'js/booking.js' %}"></script>
 {% endblock %}

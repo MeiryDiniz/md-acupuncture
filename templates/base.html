@@ -44,14 +44,17 @@
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{{ home_url }}">Home</a>
                     </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
+                    {% if user.is_authenticated %}                                     
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == patients_page %}active{% endif %}" aria-current="page"
                             href="{% url 'patients_page' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'book_appointment' %}">Book Appointment</a>
+                    </li>   
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -93,7 +96,7 @@
     </div>
     <footer class="bg-dark text-center">
         <div class="container py-3">
-            <p class="m-0 text-center text-white">&copy;2023 MD Acupuncture - Developed by Meiry Fernanda Diniz</p>
+            <p class="m-0 text-center text-white">&copy;2024 MD Acupuncture - Developed by Meiry Fernanda Diniz</p>
             <p class="m-0 text-center text-white">Let's connect: <a href="https://github.com/MeiryDiniz" target="_blank"
                     rel="noopener" aria-label="Visit my perfil on Github"><i class="fab fa-github-square fa-lg"></i></a>
                 <a href="https://www.linkedin.com/in/meiry-fernanda-diniz-1041b6254/" target="_blank" rel="noopener"
