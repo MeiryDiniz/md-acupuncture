@@ -8,12 +8,14 @@
     <form method="post">
         {% csrf_token %}        
         {{ form.as_p }}
-        {% if appointment.id %}        
-            <button type="submit" class="btn btn-primary">Update Appointment</button>
-        {% else %}
-            <button type="submit" class="btn btn-primary">Book Appointment</button>
-        {% endif %}
+        <button class="btn btn-primary" type="submit">Book</button>        
     </form>
+    <p>
+        <button class="btn btn-primary" id="back-appointments-btn" data-url="{% url 'patients_page' %}">Back to My Appointments</button>
+    </p>
+    <p>
+        <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Logout</button>
+    </p>
 </div>
 {% endblock %}
 

@@ -11,9 +11,7 @@
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <h5>It has never been so easy to book or manage your appointments!</h5>
-                <p>Would you like to have an appointment booked, or just manage it? You can do it by clicking the
-                    buttons below.</p>
-
+                <p>Would you like to have an appointment booked, or just manage it? You can do it just with few taps!</p>
                 {% endif %}
             </div>
         </div>
@@ -22,35 +20,24 @@
 <!-- Displaying Appointments -->
 <div class="container">
     <h2>My Appointments</h2>
-    <a href="{% url 'book_appointment' %}" class="btn btn-success mb-3">Book Appointment</a>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for appointment in appointments %}
-            <tr>
-                <td>{{ appointment.date }}</td>
-                <td>{{ appointment.time }}</td>
-                <td>
-                    <a href="{% url 'edit_appointment' appointment.id %}" class="btn btn-warning">Edit</a>
-                    <!-- <a href="{% url 'delete_appointment' appointment.id %}" class="btn btn-danger">Delete</a> -->
-                    <form id="deleteForm{{ appointment.id }}" method="post"
-                        action="{% url 'delete_appointment' appointment.id %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="appointment_id" value="{{ appointment.id }}">
-                        <button type="button" class="btn btn-danger"
-                            onclick="confirmDelete({{ appointment.id }})">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <ul>
+        {% for appointment in appointments %}
+        <li>
+            {{ appointment.date }} at {{ appointment.time }}
+            <button class="btn btn-primary btn-sm edit-appointment-btn" data-url="{% url 'edit_appointment' appointment.id %}">Edit</button>
+            <form method="post" action="{% url 'delete_appointment' appointment.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>    
+    <p>
+        <button class="btn btn-primary" id="book-appointment-btn" data-url="{% url 'book_appointment' %}">Book an Appointment</button>
+    </p>
+    <p>
+        <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Logout</button>
+    </p>    
 </div>
 
 {% endblock %}

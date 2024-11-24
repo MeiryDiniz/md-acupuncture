@@ -1,3 +1,56 @@
-.logo {
-   color: whitesmoke; 
+.logo, .custom-text-color, .navbar-light .navbar-nav .nav-link {
+   color: antiquewhite;
+} 
+
+.nav-link:hover {
+   color: #212529 !important;
+   background-color: antiquewhite !important;
+}
+
+.btn-primary {
+   color: antiquewhite;
+   background-color: #212529;
+   border-color: #212529;
+}
+
+.btn-primary:hover {
+   color: #212529;
+   background-color: antiquewhite;
+   border-color: #212529;
+}
+
+.btn-danger {
+   color: antiquewhite;
+   background-color: #dc3545;
+   border-color: #212529;
+}
+
+.btn-danger:hover {
+   color: #dc3545;
+   background-color: #212529;   
+}
+
+.custom-main {
+   background-color: antiquewhite;  
+   color: #212529;                             
+}
+
+/* Make the main element take full height of the page */
+main {
+   display: flex;
+   justify-content: center;  
+   align-items: center;      
+   height: 81vh;             
+   flex-direction: column;    
+}
+
+/* Styling for the text indicating login status */
+.custom-text {
+   background-color: #212529;
+   color: antiquewhite;        
+   padding: 15px 30px;                   
+   border-radius: 5px;                   
+   font-weight: bold;                    
+   text-align: center;                   
+   margin: 10px 0; 
 }

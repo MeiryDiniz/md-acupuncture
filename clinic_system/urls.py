@@ -18,12 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-# from booking import views as booking_views
+from booking import views as booking_views
 
 urlpatterns = [
-    path('', include('booking.urls'), name="booking.urls"),
-    path("accounts/", include("allauth.urls")),
-    # path('', booking_views.home, name='home'),
+    path('', include('booking.urls')),    
+    path("accounts/", include("allauth.urls")),   
     path('admin/', admin.site.urls),
 ]
 
