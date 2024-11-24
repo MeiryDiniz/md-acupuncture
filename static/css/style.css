@@ -10,7 +10,7 @@
 .btn-primary {
    color: antiquewhite;
    background-color: #212529;
-   border-color: #212529;
+   border-color: antiquewhite;
 }
 
 .btn-primary:hover {
@@ -54,3 +54,56 @@ main {
    text-align: center;                   
    margin: 10px 0; 
 }
+
+/* Full-page container for centering logout content */
+.logout-container {
+   display: flex;
+   justify-content: center; /* Center horizontally */
+   align-items: center;     /* Center vertically */
+   height: 100vh;           /* Full height of the viewport */
+   background-color: antiquewhite; /* App background color */
+}
+
+/* Content box styling for logout page */
+.logout-content {
+   text-align: center;      /* Center the text */
+   background-color: #212529; /* Dark background */
+   color: antiquewhite;            /* White text */
+   padding: 40px 60px;      /* Padding around the content */
+   border-radius: 10px;     /* Rounded corners */
+   width: 100%;             /* Full width */
+   max-width: 400px;        /* Limit max width */
+}
+
+/* Header for logout page */
+.logout-content h1 {
+   font-size: 2rem;
+   font-weight: bold;
+   margin-bottom: 20px;
+}
+
+/* Message style */
+.logout-content p {
+   font-size: 1.2rem;
+   margin-bottom: 30px;
+}
+
+/* Button style for logout page */
+.logout-actions .btn {
+   background-color: #212529;
+   color: antiquewhite;
+   border-color: antiquewhite;
+   padding: 10px 20px;
+   font-size: 1rem;   
+   /* border-radius: 5px; */
+   
+   
+}
+
+/* Button hover effect */
+.logout-actions .btn:hover {
+   background-color: antiquewhite;
+   color: #212529;
+   border-color: antiquewhite;   /* Darker color on hover */
+}
+
