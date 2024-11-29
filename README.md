@@ -2,9 +2,9 @@
 
 This project is a web application developed using Django and Django Allauth for user management, built for managing acupuncture appointments and user profiles. It includes features such as account registration, user profile management, and custom forms for collecting personal information. 
 
-![M|D ACUPUNCTURE]()
+![M|D ACUPUNCTURE](/workspace/md-acupuncture/static/images/readme-md/Screenshot 2024-11-29 224907.png)
 
-Visit the live version of the program automation: [M|D ACUPUNCTURE]()
+Visit the live version of the web application: [M|D ACUPUNCTURE](https://md-booking-system-e8987ebab81d.herokuapp.com/)
 
 - - -
 
@@ -43,6 +43,7 @@ This project uses the following technologies:
  + **Django:** The web framework used for developing the application.
  + **Django Allauth:** Used for user authentication, registration, and account management.
  + **Bootstrap:** Used for styling the frontend and ensuring a responsive layout.
+ + **Neon Database**: The cloud-native PostgreSQL database used for storing the app’s data.
  + **SQLite:** The default database for development.
  + **Python 3.x:** The programming language used for backend development.
  + **HTML/CSS:** For structuring and styling the frontend.
@@ -138,3 +139,5 @@ The content and code of the program were wrote by the developer.
 ## CREDITS
 
 I used the Code Intitute's **Love Sandwiches** milestone project as a base to develop my proram and understand better how to use ``Python`` on its development.
+
+
