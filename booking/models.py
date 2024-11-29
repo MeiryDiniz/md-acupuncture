@@ -10,13 +10,7 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=30)
     date_of_birth = models.DateField()
-    email_address = models.EmailField(max_length=100)
-    street = models.CharField(max_length=100)
-    eircode = models.CharField(max_length=10)
-    city = models.CharField(max_length=50)
-    county = models.CharField(max_length=50)
-    country = models.CharField(max_length=50)
-
+    
     class Meta:
         ordering = ['first_name', 'last_name']
 
@@ -55,14 +49,4 @@ class Schedule(models.Model):
         return False    
 
 
-class Review(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = models.TextField()
-    approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ['created_on']
-
-    def __str__(self):
-        return f"Review: {self.body} By: {self.author}"            
+         

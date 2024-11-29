@@ -2,10 +2,51 @@
    color: antiquewhite;
 } 
 
+.active {
+   color: antiquewhite !important;
+}
+
 .nav-link:hover {
    color: #212529 !important;
    background-color: antiquewhite !important;
 }
+
+main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 83vh; 
+   flex-direction: column;
+   overflow: auto; 
+   padding: 20px; 
+   box-sizing: border-box; 
+}
+
+.custom-main {
+   background-color: antiquewhite;  
+   color: #212529;                             
+}
+
+/* Styling for the text indicating login status */
+.custom-text {
+   background-color: #212529;
+   color: antiquewhite;        
+   padding: 10px 15px;                   
+   border-radius: 5px;         
+   text-align: center;                   
+   margin: 10px 0; 
+}
+
+.login-status-message {
+   display: flex;
+   justify-content: center; 
+   align-items: center; 
+   margin: 0 auto; 
+   width: fit-content;
+   margin-bottom: 10px;
+}
+
+/* Buttons Style */
 
 .btn-primary {
    color: antiquewhite;
@@ -30,53 +71,135 @@
    background-color: #212529;   
 }
 
-.custom-main {
-   background-color: antiquewhite;  
-   color: #212529;                             
-}
-
-/* Make the main element take full height of the page */
-main {
+.buttons-patients-pg,
+.buttons-booking-pg,
+.index-buttons-page {
    display: flex;
-   justify-content: center;  
-   align-items: center;      
-   height: 81vh;             
-   flex-direction: column;    
+   justify-content: space-between;
+   margin-top: 20px;
 }
 
-/* Styling for the text indicating login status */
-.custom-text {
+.buttons-patients-pg .btn,
+.buttons-booking-pg .btn,
+.index-buttons-pg .btn {
+   flex: 1;
+   margin: 0 5px;
+}
+
+.logout-actions .btn {
    background-color: #212529;
-   color: antiquewhite;        
-   padding: 15px 30px;                   
-   border-radius: 5px;                   
-   font-weight: bold;                    
-   text-align: center;                   
-   margin: 10px 0; 
+   color: antiquewhite;
+   border-color: antiquewhite;
+   padding: 10px 20px;
+   font-size: 1rem;    
 }
 
+.logout-actions .btn:hover {
+   background-color: antiquewhite;
+   color: #212529;
+   border-color: antiquewhite;   
+}
+
+/* Patients Dashboard Style */
+.patients-container {
+   display: flex
+;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: antiquewhite;
+}
+
+.patients-content {
+   text-align: center;
+   background-color: #212529;
+   color: antiquewhite;
+   padding: 40px 60px;
+   border-radius: 10px;
+   width: 100%;
+   max-width: 400px;
+}
+
+.user-message {
+   font-size: 2rem;
+   font-weight: bold;
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.bookings-info {
+   text-align: left;
+   background-color: #212529;
+   color: antiquewhite;
+   padding: 20px 30px;
+   border-radius: 10px;
+   width: 100%;
+   max-width: 650px;
+}
+
+.bookings-info h3 {
+   text-align: center;
+}
+
+/* Bookings Page Style */
+.booking-content {
+   text-align: left;
+   background-color: #212529;
+   color: antiquewhite;
+   padding: 20px 30px;
+   border-radius: 10px;
+   width: 100%;
+   max-width: 650px;
+}
+
+.booking-content h2 {
+   text-align: center;
+}
+
+/* Index Page Style */
+.index-content {
+   text-align: center;
+   padding: 20px 30px;   
+   width: 100%;
+   max-width: 650px;
+}
+
+.index-content h1 {
+   text-align: center;
+}
+
+/* Log Out Page Style */
 /* Full-page container for centering logout content */
-.logout-container {
+.logout-container,
+.login-container,
+.signup-container,
+.password-reset-container {
    display: flex;
-   justify-content: center; /* Center horizontally */
-   align-items: center;     /* Center vertically */
-   height: 100vh;           /* Full height of the viewport */
-   background-color: antiquewhite; /* App background color */
+   justify-content: center; 
+   align-items: center;     
+   height: 100vh;           
+   background-color: antiquewhite; 
 }
 
 /* Content box styling for logout page */
-.logout-content {
-   text-align: center;      /* Center the text */
-   background-color: #212529; /* Dark background */
-   color: antiquewhite;            /* White text */
-   padding: 40px 60px;      /* Padding around the content */
-   border-radius: 10px;     /* Rounded corners */
-   width: 100%;             /* Full width */
-   max-width: 400px;        /* Limit max width */
+.logout-content,
+.login-content,
+.signup-content,
+.password-reset-content {
+   text-align: center;      
+   background-color: #212529; 
+   color: antiquewhite;           
+   padding: 40px 60px;      
+   border-radius: 10px;     
+   width: 100%;             
+   max-width: 400px;        
 }
 
 /* Header for logout page */
-.logout-content h1 {
+.logout-content h1,
+.login-content h1,
+.signup-content h1,
+.signup-content h1 {
    font-size: 2rem;
    font-weight: bold;
    margin-bottom: 20px;
@@ -88,22 +211,43 @@ main {
    margin-bottom: 30px;
 }
 
-/* Button style for logout page */
-.logout-actions .btn {
-   background-color: #212529;
-   color: antiquewhite;
-   border-color: antiquewhite;
-   padding: 10px 20px;
-   font-size: 1rem;   
-   /* border-radius: 5px; */
-   
-   
+/* Sign Up Page Style */
+.signup-container {
+   padding: 20px;
 }
 
-/* Button hover effect */
-.logout-actions .btn:hover {
-   background-color: antiquewhite;
-   color: #212529;
-   border-color: antiquewhite;   /* Darker color on hover */
+.signup-content {        
+   max-width: 600px; 
+   overflow-y: auto;       
+   max-height: 90vh;       
+   box-sizing: border-box;     
 }
+
+.signup-content h1 {
+   font-size: 2rem;
+   font-weight: bold;
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.password-info li {
+   color: antiquewhite;
+}
+/* Password Reset Page Style */
+.password-reset-content {              
+   padding: 20px 30px;                
+   max-width: 475px;        
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-message {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
 

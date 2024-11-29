@@ -1,48 +1,57 @@
-{% extends "account/base_entrance.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load allauth account %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock head_title %}
+{% block head_title %}
+    {% trans "Sign In" %}
+{% endblock head_title %}
+
 {% block content %}
-    {% element h1 %}
-        <h6>{% trans "Sign In" %}</h6>
-    {% endelement %}
-    {% if not SOCIALACCOUNT_ONLY %}
-        {% setvar link %}
-            <a href="{{ signup_url }}">
-            {% endsetvar %}
-            {% setvar end_link %}
-            </a>
-        {% endsetvar %}
-        {% element p %}
-            {% blocktranslate %}If you have not created an account yet, then please {{ link }}sign up{{ end_link }} first.{% endblocktranslate %}
-        {% endelement %}
+<div class="login-container">
+    <div class="login-content">
+        <h1 class="text-center">{% trans "Log In" %}</h1>
+
+        {% if not SOCIALACCOUNT_ONLY %}
+            <p class="text-center">
+                {% blocktranslate %}
+                    If you have not created an account yet, then please 
+                    <a href="{{ signup_url }}" class="text-primary">Sign Up</a> first.
+                {% endblocktranslate %}
+            </p>
+        {% endif %}
+
         {% url 'account_login' as login_url %}
-        {% element form form=form method="post" action=login_url tags="entrance,login" %}
-            {% slot body %}
-                {% csrf_token %}
-                {% element fields form=form unlabeled=True %}
-                {% endelement %}
-                {{ redirect_field }}
-            {% endslot %}
-            {% slot actions %}
-                {% element button type="submit" tags="prominent,login" %}
-                    {% trans "Sign In" %}
-                {% endelement %}
-            {% endslot %}
-        {% endelement %}
-    {% endif %}
-    {% if LOGIN_BY_CODE_ENABLED %}
-        {% element hr %}
-        {% endelement %}
-        {% element h2 %}
-            {% element button href=request_login_code_url tags="prominent,login,secondary" %}
-                {% trans "Mail me a sign-in code" %}
+        <form method="post" action="{{ login_url }}" class="login-form">
+            {% csrf_token %}
+            
+            <!-- Render form fields -->
+            {% element fields form=form unlabeled=True %}
             {% endelement %}
-        {% endelement %}
-    {% endif %}
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
+            {{ redirect_field }}   
+
+            <!-- Log In button -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">
+                    {% trans "Log In" %}
+                </button>
+            </div>
+        </form>       
+
+        {% if LOGIN_BY_CODE_ENABLED %}
+            <div class="text-center mt-4">
+                <hr>
+                <button class="btn btn-secondary" onclick="window.location.href='{{ request_login_code_url }}'">
+                    {% trans "Mail me a sign-in code" %}
+                </button>
+            </div>
+        {% endif %}
+
+        {% if SOCIALACCOUNT_ENABLED %}
+            <div class="social-login text-center mt-4">
+                {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+            </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock content %}

@@ -1,7 +1,8 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from booking.models import Appointment  # Assuming you have an Appointment model
+from booking.models import Schedule
+import datetime  
 
 class AppointmentTests(TestCase):
 
@@ -11,9 +12,9 @@ class AppointmentTests(TestCase):
         self.client.login(username='testuser', password='password')
 
         # Create a test appointment
-        self.appointment = Appointment.objects.create(
+        self.appointment = Schedule.objects.create(
             user=self.user,
-            date='2024-11-20',
+            date=datetime.date(2024, 11, 20),  
             time='10:00:00',
         )
 
@@ -38,9 +39,9 @@ class AppointmentTests(TestCase):
 
     def test_delete_appointment(self):
         response = self.client.post(reverse('delete_appointment', args=[self.appointment.id]))
-        self.assertEqual(response.status_code, 302)  # Assuming a redirect after deletion
-        self.assertFalse(Appointment.objects.filter(id=self.appointment.id).exists())
+        self.assertEqual(response.status_code, 302)  
+        self.assertFalse(Schedule.objects.filter(id=self.appointment.id).exists())
 
     def test_logout_view(self):
         response = self.client.get(reverse('account_logout'))
-        self.assertEqual(response.status_code, 302)  # Assuming a redirect after logout
+        self.assertEqual(response.status_code, 302)  

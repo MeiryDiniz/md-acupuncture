@@ -49,7 +49,7 @@
                     </li>   
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
+                            href="{% url 'account_logout' %}">Log Out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -58,28 +58,27 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
+                            href="{% url 'account_login' %}">Log In</a>
                     </li>
                     {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="container mt-5">
-        <main>
+        <div class="login-status-message">
             {% if user.is_authenticated %}
-                <p class="text-end m-3 custom-text">You are logged in as {{ user }}!</p>
+                <p class="custom-text">You are logged in as {{ user }}!</p>
             {% else %}
-                <p class="text-end m-3 custom-text">You are not logged in!</p>
+                <p class="custom-text">You are not logged in!</p>
             {% endif %}
-
+        </div>
+        <main>
             {% block content %}
             <!-- Content Goes here -->
             {% endblock content %}
         </main>
     </div>
-
     <footer class="bg-dark text-center">
         <div class="container py-3">
             <p class="m-0 text-center custom-text-color">&copy;2024 MD Acupuncture - Developed by Meiry Fernanda Diniz</p>

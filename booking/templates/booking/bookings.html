@@ -3,19 +3,20 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container">
+<div class="booking-content">
     <h2>Book Appointment</h2>
     <form method="post">
-        {% csrf_token %}        
+        {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-primary" type="submit">Book</button>        
+        <div class="buttons-booking-pg">
+            <button class="btn btn-primary" type="submit">Book</button>
+        </div>
     </form>
-    <p>
-        <button class="btn btn-primary" id="back-appointments-btn" data-url="{% url 'patients_page' %}">Back to My Appointments</button>
-    </p>
-    <p>
-        <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Logout</button>
-    </p>
+    <div class="buttons-booking-pg">
+        <button class="btn btn-primary" id="back-appointments-btn" data-url="{% url 'patients_page' %}">Back to My
+            Appointments</button>
+        <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Log Out</button>
+    </div>
 </div>
 {% endblock %}
 

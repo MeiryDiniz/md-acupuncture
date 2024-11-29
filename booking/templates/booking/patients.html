@@ -4,40 +4,38 @@
 
 {% block content %}
 <!-- User welcome -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 card mb-4 mt-3">
-            <h1>Welcome {{ user.username }},</h1>
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <h5>It has never been so easy to book or manage your appointments!</h5>
-                <p>Would you like to have an appointment booked, or just manage it? You can do it just with few taps!</p>
-                {% endif %}
-            </div>
+<div class="patients-container">
+    <div>
+        <h1 class="user-message">Welcome {{ user.username }},</h1>
+        <div class="patients-content">
+            {% if user.is_authenticated %}
+            <h5>It has never been so easy to book or manage your appointments!</h5>
+            <p>Would you like to have an appointment booked, or just manage it? You can do it just with few taps!</p>
+            {% endif %}
         </div>
     </div>
 </div>
 <!-- Displaying Appointments -->
-<div class="container">
-    <h2>My Appointments</h2>
+<div class="bookings-info">
+    <h3>My Appointments</h3>
     <ul>
         {% for appointment in appointments %}
         <li>
             {{ appointment.date }} at {{ appointment.time }}
-            <button class="btn btn-primary btn-sm edit-appointment-btn" data-url="{% url 'edit_appointment' appointment.id %}">Edit</button>
+            <button class="btn btn-primary btn-sm edit-appointment-btn"
+                data-url="{% url 'edit_appointment' appointment.id %}">Edit</button>
             <form method="post" action="{% url 'delete_appointment' appointment.id %}" style="display:inline;">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
             </form>
         </li>
         {% endfor %}
-    </ul>    
-    <p>
-        <button class="btn btn-primary" id="book-appointment-btn" data-url="{% url 'book_appointment' %}">Book an Appointment</button>
-    </p>
-    <p>
-        <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Logout</button>
-    </p>    
+    </ul>
+    <div class="buttons-patients-pg">
+        <button class="btn btn-primary" id="book-appointment-btn" data-url="{% url 'book_appointment' %}">Book an
+            Appointment</button>
+        <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Log Out</button>
+    </div>
 </div>
 
 {% endblock %}

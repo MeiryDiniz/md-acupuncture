@@ -4,29 +4,25 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-<h1>Welcome to Our Clinic!</h1>
-<p>Our acupuncture services are designed to restore balance and promote well-being. With our easy-to-use app, you can
-    effortlessly book and manage your appointments anytime, anywhere. Experience the benefits of acupuncture with just a
-    few taps!</p>
-{% if user.is_authenticated %}
-<p>
-    <button class="btn btn-primary" id="view-appointments-btn" data-url="{% url 'patients_page' %}">View Your
-        Appointments</button>
-</p>
-<p>
-    <button class="btn btn-primary" id="book-appointment-btn" data-url="{% url 'book_appointment' %}">Book an
-        Appointment</button>
-</p>
-<p>
-    <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Logout</button>
-</p>
-{% else %}
-<p>
-    <button class="btn btn-primary" id="register-btn" data-url="{% url 'account_signup' %}">Register</button>
-</p>
-<p>
-    <button class="btn btn-primary" id="login-btn" data-url="{% url 'account_login' %}">Log In</button>
-</p>
+<div class="index-content">
+    <h1>Welcome to Our Clinic!</h1>
+    <p>Our acupuncture services are designed to restore balance and promote well-being. With our easy-to-use app, you
+        can
+        effortlessly book and manage your appointments anytime, anywhere. Experience the benefits of acupuncture with
+        just a
+        few taps!</p>
+    {% if user.is_authenticated %}
+    <div class="index-buttons-pg">
+        <button class="btn btn-primary" id="view-appointments-btn" data-url="{% url 'patients_page' %}">View Your
+            Appointments</button>
+        <button class="btn btn-primary" id="book-appointment-btn" data-url="{% url 'book_appointment' %}">Book an
+            Appointment</button>
+        <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Log Out</button>
+        {% else %}
+        <button class="btn btn-primary" id="register-btn" data-url="{% url 'account_signup' %}">Register</button>
+        <button class="btn btn-primary" id="login-btn" data-url="{% url 'account_login' %}">Log In</button>
+    </div>
+</div>
 
 {% endif %}
 <!-- index.html content ends here -->

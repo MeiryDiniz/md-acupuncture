@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% load static %}
-{% load crispy_forms_tags %}
+<!-- {% load static %}
+{% load crispy_forms_tags %} -->
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
@@ -9,14 +9,14 @@
 {% block content %}
 <div class="logout-container">
     <div class="logout-content">
-        <h1>{% trans "Sign Out" %}</h1>
+        <h1>{% trans "Log Out" %}</h1>
         <p>{% trans 'Are you sure you want to sign out?' %}</p>
         <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {{ redirect_field }}
             <div class="logout-actions">
                 <button type="submit" class="btn">
-                    {% trans 'Sign Out' %}
+                    {% trans 'Log Out' %}
                 </button>                
             </div>
         </form>
@@ -24,4 +24,8 @@
         <button class="btn btn-primary" id="back-appointments-btn" data-url="{% url 'patients_page' %}">Back to My Appointments</button>
     </div>
 </div>
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/booking.js' %}"></script>
 {% endblock %}
