@@ -32,7 +32,7 @@ def book_appointment(request):
     else:
         form = ScheduleForm()
     
-    return render(request, 'booking/bookings.html', {'form': form})
+    return render(request, 'booking/booking_appointment.html', {'form': form})
 
 @login_required
 def edit_appointment(request, id):
@@ -46,7 +46,7 @@ def edit_appointment(request, id):
     else:
         form = ScheduleForm(instance=appointment)
     
-    return render(request, 'booking/bookings.html', {'form': form})
+    return render(request, 'booking/edit_appointment.html', {'form': form})
 
 @login_required
 def delete_appointment(request, id):

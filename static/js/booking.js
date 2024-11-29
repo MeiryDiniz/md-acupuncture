@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    const bookAppointmentBtn = document.getElementById('book-appointment-btn');
+    const bookAppointmentBtn = document.getElementById('booking-appointment-btn');
     if (bookAppointmentBtn) {
         bookAppointmentBtn.onclick = function() {
             window.location.href = bookAppointmentBtn.dataset.url;
