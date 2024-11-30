@@ -122,10 +122,11 @@ main {
    text-align: center;
    background-color: #212529;
    color: antiquewhite;
-   padding: 40px 60px;
+   padding: 40px 30px;
    border-radius: 10px;
    width: 100%;
    max-width: 400px;
+   height: 32vh;
 }
 
 .user-message {
