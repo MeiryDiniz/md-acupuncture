@@ -2,7 +2,7 @@
 
 This project is a web application developed using Django and Django Allauth for user management, built for managing acupuncture appointments and user profiles. It includes features such as account registration, user profile management, and custom forms for collecting personal information. 
 
-![M|D ACUPUNCTURE](/workspace/md-acupuncture/static/images/readme-md/Screenshot 2024-11-29 224907.png)
+![M|D ACUPUNCTURE](https://github.com/MeiryDiniz/md-acupuncture/blob/main/static/images/readme-md/Screenshot%202024-11-29%20224907.png)
 
 Visit the live version of the web application: [M|D ACUPUNCTURE](https://md-booking-system-e8987ebab81d.herokuapp.com/)
 
@@ -86,7 +86,7 @@ Destroying test database for alias 'default'...
 
 - - -
 
-## MANUAL TESTING
+## MANUAL TESTS
 
 ### Test done by developer
 
@@ -115,7 +115,7 @@ Have APP features tested.
 I had a considerable number of problems with the result of functions in my code and also, how them were running. It happened because I was not using the correct indentation and sequence to write the functions. I revised the course content, did research on google and kept trying until I got the result that I needed. 
 
 ### UNFIXED BUGS
-There is an issue with the logout functionality during the tests. The test expects a 302 status code (redirect), but it receives a 200 status code instead. This indicates that the logout view is not correctly redirecting to the login page. Despite attempts to resolve this, the issue persists.
+Although the application is working correctly, there is an issue with the logout functionality during the tests. The test expects a 302 status code (redirect), but it receives a 200 status code instead. This indicates that the logout view is not correctly redirecting to the login page. Despite attempts to resolve this, the issue persists.
 - - -
 
 ## DEPLOYMENT 
@@ -126,20 +126,23 @@ The **M|D ACUPUNCTURE** APP was deployed on Heroku using Code Institute's mock t
 
 ## RESOURCE
 
-In addition to the course content I used [Stack Overflow](http://stackoverflow.com) to do research to develop my APP. 
+In addition to the course content I used the following to do research to develop my APP:
+ + [Stack Overflow](http://stackoverflow.com);
+ + [w3 Schools](https://www.w3schools.com/);
+ + [Django Documrntation](https://docs.djangoproject.com/)
 
 - - - 
 
 ## CONTENT
 
-The content and code of the program were wrote by the developer.
+Some codes were taken from the [Code Institute](https://codeinstitute.net/ie/) milestone project. The content and the majority of the web application code were wrote by the developer.
 
 - - - 
 
 ## CREDITS
 
-I used the Code Intitute's **Love Sandwiches** milestone project as a base to develop my proram and understand better how to use ``Python`` on its development.
+I used the Code Intitute's **Django Blog** milestone project as a base to develop my web application and understand better how to use ``Python`` and ``Django`` on its development.
 
-The Favicon used was taken from [Flaticon](https://www.flaticon.com/free-icon/acupuncture_1996928?term=acupuncture&related_id=1996928)
+The Favicon used was taken from [Flaticon](https://www.flaticon.com/free-icon/acupuncture_1996928?term=acupuncture&related_id=1996928).
 
 
