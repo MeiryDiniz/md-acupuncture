@@ -140,4 +140,6 @@ The content and code of the program were wrote by the developer.
 
 I used the Code Intitute's **Love Sandwiches** milestone project as a base to develop my proram and understand better how to use ``Python`` on its development.
 
+The Favicon used was taken from [Flaticon](https://www.flaticon.com/free-icon/acupuncture_1996928?term=acupuncture&related_id=1996928)
+
 

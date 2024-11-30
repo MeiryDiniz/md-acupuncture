@@ -79,6 +79,12 @@ main {
    margin-top: 20px;
 }
 
+.set-password {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+}
+
 .buttons-patients-pg .btn,
 .buttons-booking-pg .btn,
 .index-buttons-pg .btn {
@@ -86,6 +92,7 @@ main {
    margin: 0 5px;
 }
 
+.set-password .btn,
 .logout-actions .btn {
    background-color: #212529;
    color: antiquewhite;
@@ -94,7 +101,8 @@ main {
    font-size: 1rem;    
 }
 
-.logout-actions .btn:hover {
+.logout-actions .btn:hover,
+.set-password .btn:hover {
    background-color: antiquewhite;
    color: #212529;
    border-color: antiquewhite;   
