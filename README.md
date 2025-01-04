@@ -2,7 +2,7 @@
 
 This project is a web application developed using Django and Django Allauth for user management, built for managing acupuncture appointments and user profiles. It includes features such as account registration, user profile management, and custom forms for collecting personal information. 
 
-![M|D ACUPUNCTURE](https://github.com/MeiryDiniz/md-acupuncture/blob/main/static/images/readme-md/Screenshot%202025-01-04%20204336.webp)
+![M|D ACUPUNCTURE](https://github.com/MeiryDiniz/md-acupuncture/blob/main/static/images/readme-md/Screenshot-2025-01-04-204336.webp)
 
 Visit the live version of the web application: [M|D ACUPUNCTURE](https://md-booking-system-e8987ebab81d.herokuapp.com/)
 
