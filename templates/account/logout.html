@@ -14,8 +14,8 @@
         <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {{ redirect_field }}
-            <div class="logout-actions">
-                <button type="submit" class="btn">
+            <div>
+                <button type="submit" class="btn btn-primary">
                     {% trans 'Log Out' %}
                 </button>                
             </div>

@@ -16,18 +16,26 @@
     </div>
 </div>
 <!-- Displaying Appointments -->
+{% if messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
 <div class="bookings-info">
     <h3>My Appointments</h3>
     <ul>
         {% for appointment in appointments %}
         <li>
             {{ appointment.date }} at {{ appointment.time }}
-            <button class="btn btn-primary btn-sm edit-appointment-btn"
-                data-url="{% url 'edit_appointment' appointment.id %}">Edit</button>
-            <form method="post" action="{% url 'delete_appointment' appointment.id %}" style="display:inline;">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-            </form>
+            <div>
+                <button class="btn btn-primary btn-sm edit-appointment-btn"
+                    data-url="{% url 'edit_appointment' appointment.id %}">Edit</button>
+                <button class="btn btn-danger btn-sm delete-appointment-btn"
+                    data-url="{% url 'delete_appointment' appointment.id %}">Delete</button>
+            </div>
         </li>
         {% endfor %}
     </ul>

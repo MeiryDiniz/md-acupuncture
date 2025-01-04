@@ -49,26 +49,30 @@ main {
 /* Buttons Style */
 
 .btn-primary {
-   color: antiquewhite;
-   background-color: #212529;
-   border-color: antiquewhite;
-}
-
-.btn-primary:hover {
    color: #212529;
    background-color: antiquewhite;
    border-color: #212529;
+   border-width: 2px;
+}
+
+.btn-primary:hover {
+   color: antiquewhite;
+   background-color: #212529;
+   border-color: antiquewhite;
+   border-width: 2px;
 }
 
 .btn-danger {
    color: antiquewhite;
    background-color: #dc3545;
    border-color: #212529;
+   border-width: 2px;
 }
 
 .btn-danger:hover {
    color: #dc3545;
    background-color: #212529;   
+   border-width: 2px;
 }
 
 .buttons-patients-pg,
@@ -92,20 +96,21 @@ main {
    margin: 0 5px;
 }
 
-.set-password .btn,
-.logout-actions .btn {
+.set-password .btn {
    background-color: #212529;
    color: antiquewhite;
    border-color: antiquewhite;
    padding: 10px 20px;
-   font-size: 1rem;    
+   font-size: 1rem; 
+   border-width: 2px;   
 }
 
 .logout-actions .btn:hover,
 .set-password .btn:hover {
    background-color: antiquewhite;
    color: #212529;
-   border-color: antiquewhite;   
+   border-color: antiquewhite; 
+   border-width: 2px;  
 }
 
 /* Patients Dashboard Style */
@@ -126,7 +131,7 @@ main {
    border-radius: 10px;
    width: 100%;
    max-width: 400px;
-   height: 32vh;
+   height: 25vh;
 }
 
 .user-message {
@@ -143,7 +148,7 @@ main {
    padding: 20px 30px;
    border-radius: 10px;
    width: 100%;
-   max-width: 650px;
+   max-width: 400px;
 }
 
 .bookings-info h3 {
@@ -182,7 +187,8 @@ main {
 .logout-container,
 .login-container,
 .signup-container,
-.password-reset-container {
+.password-reset-container,
+.delete-container {
    display: flex;
    justify-content: center; 
    align-items: center;     
@@ -194,7 +200,8 @@ main {
 .logout-content,
 .login-content,
 .signup-content,
-.password-reset-content {
+.password-reset-content,
+.delete-content {
    text-align: center;      
    background-color: #212529; 
    color: antiquewhite;           

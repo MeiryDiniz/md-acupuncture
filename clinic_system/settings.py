@@ -29,9 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-meirydiniz-mdacupunctur-acmncqo1bvf.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['8000-meirydiniz-mdacupunctur-pdzfeqdakru.ws-eu117.gitpod.io',                 
                  '.herokuapp.com']
 
 

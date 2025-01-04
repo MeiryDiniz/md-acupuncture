@@ -2,7 +2,15 @@
 {% load static %}
 
 {% block content %}
-
+{% if messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %} 
+<img src="{% static 'images/booking/image1.jpg' %}" alt="Welcome Image" width="400">
 <!-- index.html content starts here -->
 <div class="index-content">
     <h1>Welcome to Our Clinic!</h1>

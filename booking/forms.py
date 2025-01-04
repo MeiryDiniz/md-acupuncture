@@ -1,5 +1,7 @@
 from allauth.account.forms import SignupForm
+from datetime import datetime, time
 from django import forms
+from django.core.exceptions import ValidationError
 from .models import UserProfile, Schedule
 
 class CustomSignupForm(SignupForm):
@@ -36,5 +38,12 @@ class ScheduleForm(forms.ModelForm):
             'date': forms.DateInput(attrs={'type': 'date'}),
             'time': forms.Select(),
         }
+
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        time_str = cleaned_data.get("time")  
+
+        return cleaned_data    
 
         
