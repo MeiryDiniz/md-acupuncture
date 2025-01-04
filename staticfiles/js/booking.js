@@ -46,4 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = button.dataset.url;
         };
     });
+
+    document.querySelectorAll('.delete-appointment-btn').forEach(function(button) {
+        button.onclick = function(event) {
+            event.preventDefault();
+            window.location.href = button.dataset.url;
+        };
+    });
 });

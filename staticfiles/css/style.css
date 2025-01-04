@@ -1,3 +1,53 @@
+/* Hero Section Styles */
+.hero-section {
+   position: relative;
+   width: 100%;
+   height: 100vh; 
+   background: url('../images/booking/image1.webp') no-repeat center center/cover;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: antiquewhite;
+}
+
+/* Dark overlay for better contrast */
+.overlay {
+   border-radius: 10px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5); 
+}
+
+/* Center text and buttons */
+.hero-content {
+   position: relative;
+   z-index: 2;
+   max-width: 90%;
+   padding: 5px;
+}
+
+.hero-content h1 {
+   font-weight: bold;
+   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+   font-size: 1.5rem;
+   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* Buttons */
+.index-buttons-pg {
+   margin-top: 20px;
+}
+
+.index-buttons-pg button {
+   margin: 10px;
+}
 .logo, .custom-text-color, .navbar-light .navbar-nav .nav-link {
    color: antiquewhite;
 } 
@@ -23,7 +73,7 @@ main {
 }
 
 .custom-main {
-   background-color: antiquewhite;  
+   /* background-color: antiquewhite;   */
    color: #212529;                             
 }
 
@@ -31,8 +81,8 @@ main {
 .custom-text {
    background-color: #212529;
    color: antiquewhite;        
-   padding: 10px 15px;                   
-   border-radius: 5px;         
+   padding: 20px 15px;                   
+   border-radius: 10px;         
    text-align: center;                   
    margin: 10px 0; 
 }
@@ -49,26 +99,30 @@ main {
 /* Buttons Style */
 
 .btn-primary {
-   color: antiquewhite;
-   background-color: #212529;
-   border-color: antiquewhite;
-}
-
-.btn-primary:hover {
    color: #212529;
    background-color: antiquewhite;
    border-color: #212529;
+   border-width: 2px;
+}
+
+.btn-primary:hover {
+   color: antiquewhite;
+   background-color: #212529;
+   border-color: antiquewhite;
+   border-width: 2px;
 }
 
 .btn-danger {
    color: antiquewhite;
    background-color: #dc3545;
    border-color: #212529;
+   border-width: 2px;
 }
 
 .btn-danger:hover {
    color: #dc3545;
    background-color: #212529;   
+   border-width: 2px;
 }
 
 .buttons-patients-pg,
@@ -92,41 +146,40 @@ main {
    margin: 0 5px;
 }
 
-.set-password .btn,
-.logout-actions .btn {
+.set-password .btn {
    background-color: #212529;
    color: antiquewhite;
    border-color: antiquewhite;
    padding: 10px 20px;
-   font-size: 1rem;    
+   font-size: 1rem; 
+   border-width: 2px;   
 }
 
 .logout-actions .btn:hover,
 .set-password .btn:hover {
    background-color: antiquewhite;
    color: #212529;
-   border-color: antiquewhite;   
+   border-color: antiquewhite; 
+   border-width: 2px;  
 }
 
 /* Patients Dashboard Style */
 .patients-container {
-   display: flex
-;
+   display: flex;
    justify-content: center;
    align-items: center;
-   height: 100vh;
-   background-color: antiquewhite;
+   height: 100vh;   
 }
 
 .patients-content {
    text-align: center;
    background-color: #212529;
    color: antiquewhite;
-   padding: 40px 30px;
+   padding: 20px 15px;
    border-radius: 10px;
    width: 100%;
    max-width: 400px;
-   height: 32vh;
+   height: fit-content;
 }
 
 .user-message {
@@ -140,10 +193,10 @@ main {
    text-align: left;
    background-color: #212529;
    color: antiquewhite;
-   padding: 20px 30px;
+   padding: 20px 15px;
    border-radius: 10px;
    width: 100%;
-   max-width: 650px;
+   max-width: 400px;
 }
 
 .bookings-info h3 {
@@ -155,7 +208,7 @@ main {
    text-align: left;
    background-color: #212529;
    color: antiquewhite;
-   padding: 20px 30px;
+   padding: 20px 15px;
    border-radius: 10px;
    width: 100%;
    max-width: 650px;
@@ -165,36 +218,25 @@ main {
    text-align: center;
 }
 
-/* Index Page Style */
-.index-content {
-   text-align: center;
-   padding: 20px 30px;   
-   width: 100%;
-   max-width: 650px;
-}
-
-.index-content h1 {
-   text-align: center;
-}
-
-/* Log Out Page Style */
+/* Log Out, Log In, Sigup, Password Reset and delete Page Style */
 /* Full-page container for centering logout content */
 .logout-container,
 .login-container,
 .signup-container,
-.password-reset-container {
+.password-reset-container,
+.delete-container {
    display: flex;
    justify-content: center; 
    align-items: center;     
-   height: 100vh;           
-   background-color: antiquewhite; 
+   height: 100vh;    
 }
 
-/* Content box styling for logout page */
+/* Content styling for Log Out, Log In, Sigup, Password Reset and delete Page */
 .logout-content,
 .login-content,
 .signup-content,
-.password-reset-content {
+.password-reset-content,
+.delete-content {
    text-align: center;      
    background-color: #212529; 
    color: antiquewhite;           
@@ -204,11 +246,9 @@ main {
    max-width: 400px;        
 }
 
-/* Header for logout page */
+/* Header for logout, login and signup page */
 .logout-content h1,
-.login-content h1,
-.signup-content h1,
-.signup-content h1 {
+.login-content h1 {
    font-size: 2rem;
    font-weight: bold;
    margin-bottom: 20px;
@@ -235,7 +275,7 @@ main {
 .signup-content h1 {
    font-size: 2rem;
    font-weight: bold;
-   margin-bottom: 20px;
+   margin-bottom: 10px;
    text-align: center;
 }
 

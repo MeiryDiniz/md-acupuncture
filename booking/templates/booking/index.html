@@ -3,7 +3,7 @@
 
 {% block content %}
 {% if messages %}
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show mt-3 mt-md-4" role="alert">
     {% for message in messages %}
     <p>{{ message }}</p>
     {% endfor %}
@@ -14,21 +14,22 @@
 <!-- Hero Section with Background Image -->
 <div class="hero-section">
     <div class="overlay"></div> <!-- Semi-transparent dark overlay -->
-    <div class="hero-content">
-        <h1>Welcome to Our Clinic!</h1>
-        <p>Our acupuncture services are designed to restore balance and promote well-being. With our easy-to-use app, 
-            you can effortlessly book and manage your appointments anytime, anywhere. Experience the benefits of acupuncture with just a few taps!</p>
+    <div class="hero-content text-center">
+        <h1 class="display-4 mt-3 mt-md-4 mt-lg-5">Welcome to Our Clinic!</h1>
+        <p class="lead mt-2 mt-md-3">Our acupuncture services are designed to restore balance and promote well-being. 
+            With our easy-to-use app, you can effortlessly book and manage your appointments anytime, anywhere. 
+            Experience the benefits of acupuncture with just a few taps!</p>
 
         {% if user.is_authenticated %}
-        <div class="index-buttons-pg">
-            <button class="btn btn-primary" id="view-appointments-btn" data-url="{% url 'patients_page' %}">View Your Appointments</button>
-            <button class="btn btn-primary" id="booking-appointment-btn" data-url="{% url 'booking_appointment' %}">Book an Appointment</button>
-            <button class="btn btn-primary" id="logout-btn" data-url="{% url 'account_logout' %}">Log Out</button>
+        <div class="index-buttons-pg mt-3 mt-md-4">
+            <button class="btn btn-primary btn-lg" id="view-appointments-btn" data-url="{% url 'patients_page' %}">View Your Appointments</button>
+            <button class="btn btn-primary btn-lg" id="booking-appointment-btn" data-url="{% url 'booking_appointment' %}">Book an Appointment</button>
+            <button class="btn btn-primary btn-lg" id="logout-btn" data-url="{% url 'account_logout' %}">Log Out</button>
         </div>
         {% else %}
-        <div class="index-buttons-pg">
-            <button class="btn btn-primary" id="register-btn" data-url="{% url 'account_signup' %}">Register</button>
-            <button class="btn btn-primary" id="login-btn" data-url="{% url 'account_login' %}">Log In</button>
+        <div class="index-buttons-pg mt-3 mt-md-4">
+            <button class="btn btn-primary btn-lg" id="register-btn" data-url="{% url 'account_signup' %}">Register</button>
+            <button class="btn btn-primary btn-lg" id="login-btn" data-url="{% url 'account_login' %}">Log In</button>
         </div>
         {% endif %}
     </div>

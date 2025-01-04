@@ -2,7 +2,7 @@
 
 This project is a web application developed using Django and Django Allauth for user management, built for managing acupuncture appointments and user profiles. It includes features such as account registration, user profile management, and custom forms for collecting personal information. 
 
-![M|D ACUPUNCTURE](https://github.com/MeiryDiniz/md-acupuncture/blob/main/static/images/readme-md/Screenshot%202024-11-29%20224907.png)
+![M|D ACUPUNCTURE](https://github.com/MeiryDiniz/md-acupuncture/blob/main/static/images/readme-md/Screenshot%202025-01-04%20204336.webp)
 
 Visit the live version of the web application: [M|D ACUPUNCTURE](https://md-booking-system-e8987ebab81d.herokuapp.com/)
 
@@ -23,6 +23,7 @@ Visit the live version of the web application: [M|D ACUPUNCTURE](https://md-book
 * [DEPLOYMENT](#deployment) 
 * [RESOURCE](#resource)  
 * [CONTENT](#content)
+* [MEDIA](#media)
 * [CREDITS](#credits)  
 
 - - -
@@ -139,10 +140,14 @@ Some codes were taken from the [Code Institute](https://codeinstitute.net/ie/) m
 
 - - - 
 
+## MEDIA
+
+- The pictures were converted to _webp_ using [Convertio](https://convertio.co/)
+- The hero image was taken from [FREEPIK](https://www.freepik.com/)
+- The image for the favicon was taken from [FLATICON](https://www.flaticon.com/free-icon/acupuncture_1996928?term=acupuncture&related_id=1996928)
+
+- - -
+
 ## CREDITS
 
 I used the Code Intitute's **Django Blog** milestone project as a base to develop my web application and understand better how to use ``Python`` and ``Django`` on its development.
-
-The Favicon used was taken from [Flaticon](https://www.flaticon.com/free-icon/acupuncture_1996928?term=acupuncture&related_id=1996928).
-
-
