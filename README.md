@@ -116,7 +116,8 @@ Have APP features tested.
 I had a considerable number of problems with the result of functions in my code and also, how them were running. It happened because I was not using the correct indentation and sequence to write the functions. I revised the course content, did research on google and kept trying until I got the result that I needed. 
 
 ### UNFIXED BUGS
-Although the application is working correctly, there is an issue with the logout functionality during the tests. The test expects a 302 status code (redirect), but it receives a 200 status code instead. This indicates that the logout view is not correctly redirecting to the login page. Despite attempts to resolve this, the issue persists.
+There aren't any bugs to be fixed.
+
 - - -
 
 ## DEPLOYMENT 
